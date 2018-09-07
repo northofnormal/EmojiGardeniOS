@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97924C6D2141A79300D3B8DB /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97924C6C2141A79300D3B8DB /* Randomizer.swift */; };
+		97924C712141B7A500D3B8DB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97924C702141B7A500D3B8DB /* Theme.swift */; };
+		97924C732141C45D00D3B8DB /* SelectAThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97924C722141C45D00D3B8DB /* SelectAThemeViewController.swift */; };
 		97AF564E2140B18A00F00320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF564D2140B18A00F00320 /* AppDelegate.swift */; };
 		97AF56502140B18A00F00320 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF564F2140B18A00F00320 /* ViewController.swift */; };
 		97AF56532140B18A00F00320 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97AF56512140B18A00F00320 /* Main.storyboard */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97924C6C2141A79300D3B8DB /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
+		97924C702141B7A500D3B8DB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		97924C722141C45D00D3B8DB /* SelectAThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAThemeViewController.swift; sourceTree = "<group>"; };
 		97AF564A2140B18A00F00320 /* emojigardenios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emojigardenios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97AF564D2140B18A00F00320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97AF564F2140B18A00F00320 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +60,9 @@
 		97AF564C2140B18A00F00320 /* emojigardenios */ = {
 			isa = PBXGroup;
 			children = (
+				97924C722141C45D00D3B8DB /* SelectAThemeViewController.swift */,
+				97924C6C2141A79300D3B8DB /* Randomizer.swift */,
+				97924C702141B7A500D3B8DB /* Theme.swift */,
 				97AF564D2140B18A00F00320 /* AppDelegate.swift */,
 				97AF564F2140B18A00F00320 /* ViewController.swift */,
 				97AF56512140B18A00F00320 /* Main.storyboard */,
@@ -135,7 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97924C732141C45D00D3B8DB /* SelectAThemeViewController.swift in Sources */,
 				97AF56502140B18A00F00320 /* ViewController.swift in Sources */,
+				97924C712141B7A500D3B8DB /* Theme.swift in Sources */,
+				97924C6D2141A79300D3B8DB /* Randomizer.swift in Sources */,
 				97AF564E2140B18A00F00320 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

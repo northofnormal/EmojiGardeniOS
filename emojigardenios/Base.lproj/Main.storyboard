@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2iJ-KP-KaR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,126 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="emojigardenios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1C-NO-zLB">
+                                <rect key="frame" x="20" y="70" width="335" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTZ-fp-Llk">
+                                <rect key="frame" x="75" y="582" width="225" height="75"/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.1176470588" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Xf5-la-94a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Try Again ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tryAgainButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="xRu-1G-pZm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="F1C-NO-zLB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="7sS-l3-p9J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aTZ-fp-Llk" secondAttribute="bottom" constant="10" id="8vp-W3-1jS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aTZ-fp-Llk" secondAttribute="trailing" constant="75" id="9mS-Xd-2xF"/>
+                            <constraint firstItem="F1C-NO-zLB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="g9T-sY-Yax"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F1C-NO-zLB" secondAttribute="trailing" constant="20" id="jpm-x0-4w7"/>
+                            <constraint firstItem="aTZ-fp-Llk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="oNq-SP-P3n"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="F1C-NO-zLB" id="HXM-xz-gQI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138" y="70"/>
+        </scene>
+        <!--SelectA Theme View Controller-->
+        <scene sceneID="eA7-s5-7Za">
+            <objects>
+                <viewController id="2iJ-KP-KaR" customClass="SelectAThemeViewController" customModule="emojigardenios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kW5-ph-ovN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rjz-o6-pEn">
+                                <rect key="frame" x="75" y="120" width="225" height="75"/>
+                                <color key="backgroundColor" red="0.76470588235294112" green="0.85882352941176465" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="13t-qd-8PP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Forrest Theme ">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.1176470588" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="themeButtonPressedWithSender:" destination="2iJ-KP-KaR" eventType="touchUpInside" id="6ho-Ku-67v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4e-yh-kVu">
+                                <rect key="frame" x="75" y="296" width="225" height="75"/>
+                                <color key="backgroundColor" red="0.46666666666666667" green="0.59607843137254901" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="PLR-jV-TNg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Sea Theme ">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.1176470588" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="themeButtonPressedWithSender:" destination="2iJ-KP-KaR" eventType="touchUpInside" id="5IN-Af-m8u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrA-Iy-X8X">
+                                <rect key="frame" x="75" y="492" width="225" height="75"/>
+                                <color key="backgroundColor" red="0.050980392156862744" green="0.10588235294117647" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="nMZ-4R-oY7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Space Theme ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="themeButtonPressedWithSender:" destination="2iJ-KP-KaR" eventType="touchUpInside" id="6vO-0N-alc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90980392156862744" green="0.86274509803921573" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rjz-o6-pEn" firstAttribute="top" secondItem="V5w-24-Uu6" secondAttribute="top" constant="100" id="ALq-5x-kQ7"/>
+                            <constraint firstItem="V5w-24-Uu6" firstAttribute="trailing" secondItem="Rjz-o6-pEn" secondAttribute="trailing" constant="75" id="EIp-KZ-3cb"/>
+                            <constraint firstItem="V5w-24-Uu6" firstAttribute="trailing" secondItem="T4e-yh-kVu" secondAttribute="trailing" constant="75" id="Hyu-ey-6SU"/>
+                            <constraint firstItem="V5w-24-Uu6" firstAttribute="bottom" secondItem="zrA-Iy-X8X" secondAttribute="bottom" constant="100" id="KDz-qC-jxH"/>
+                            <constraint firstItem="V5w-24-Uu6" firstAttribute="trailing" secondItem="zrA-Iy-X8X" secondAttribute="trailing" constant="75" id="L6U-Zv-Vzg"/>
+                            <constraint firstItem="zrA-Iy-X8X" firstAttribute="leading" secondItem="V5w-24-Uu6" secondAttribute="leading" constant="75" id="RtU-R1-oRa"/>
+                            <constraint firstItem="Rjz-o6-pEn" firstAttribute="leading" secondItem="V5w-24-Uu6" secondAttribute="leading" constant="75" id="aDe-jY-Ecg"/>
+                            <constraint firstItem="T4e-yh-kVu" firstAttribute="leading" secondItem="V5w-24-Uu6" secondAttribute="leading" constant="75" id="tcG-Ry-fQl"/>
+                            <constraint firstItem="T4e-yh-kVu" firstAttribute="centerY" secondItem="kW5-ph-ovN" secondAttribute="centerY" id="wWe-EU-cpb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V5w-24-Uu6"/>
+                    </view>
+                    <connections>
+                        <outlet property="forrestThemeButton" destination="Rjz-o6-pEn" id="pPm-gj-g3h"/>
+                        <outlet property="seaThemeButton" destination="T4e-yh-kVu" id="riE-cL-w1r"/>
+                        <outlet property="spaceThemeButton" destination="zrA-Iy-X8X" id="6ux-cn-nlG"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="MakeSomeArt" id="aBF-Jz-NWN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LiT-Gz-rvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-642" y="70"/>
         </scene>
     </scenes>
 </document>
