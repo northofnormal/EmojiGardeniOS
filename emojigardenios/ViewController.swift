@@ -29,17 +29,12 @@ class ViewController: UIViewController {
         guard let selectedTheme = theme else { return }
         let componentsArray = [selectedTheme.contextArray, selectedTheme.friendsArray, selectedTheme.snacksArray]
         
-        var generatedThing: [String] = Array()
+        let generatedSceneCollection = randomizeSceneCollection(components: componentsArray)
         
-        for _ in 1...numberOfRows {
-            let string = randomizer.generateComponentRow(componentArrays: componentsArray, length: lengthOfRows)
-            generatedThing.append(string)
-        }
+        displayLabel.text = generatedSceneCollection[0]
         
-        displayLabel.text = generatedThing[0]
-        
-        for i in 1...generatedThing.count - 1 {
-            let displayText = generatedThing[i]
+        for i in 1...generatedSceneCollection.count - 1 {
+            let displayText = generatedSceneCollection[i]
             
             let labelHeight = Int(displayLabel.frame.size.height)
             let calculatedY = Int(displayLabel.frame.maxY) + (labelHeight * (i - 1))
@@ -51,11 +46,18 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func tryAgainButtonPressed() {
-        dismiss(animated: true)
+    private func randomizeSceneCollection(components: [[String]]) -> [String] {
+        var randomizedCollection: [String] = Array()
+        
+        for _ in 1...numberOfRows {
+            let string = randomizer.generateComponentRow(componentArrays: components, length: lengthOfRows)
+            randomizedCollection.append(string)
+        }
+        
+        return randomizedCollection
     }
     
-    func createANewLabelAt(y: Int) -> UILabel {
+    private func createANewLabelAt(y: Int) -> UILabel {
         let rect = CGRect(x: displayLabel.frame.origin.x, y: CGFloat(y), width: view.frame.size.width - 40, height: displayLabel.frame.size.height)
         
         let newLabel = UILabel(frame: rect)
@@ -69,24 +71,13 @@ class ViewController: UIViewController {
         return newLabel
     }
     
-    func addALabel(under label: UILabel) -> UILabel {
-        let rect = CGRect(x: label.frame.origin.x, y: label.frame.origin.y + label.frame.height, width: view.frame.size.width - 40, height: label.frame.height)
-        
-        let newLabel = UILabel(frame: rect)
-        newLabel.font = UIFont.systemFont(ofSize: 50.0)
-        newLabel.numberOfLines = 1
-        newLabel.minimumScaleFactor = 0.25
-        newLabel.textAlignment = .center
-        newLabel.lineBreakMode = .byCharWrapping
-        newLabel.adjustsFontSizeToFitWidth = true
-        
-        return newLabel
+    @IBAction func tryAgainButtonPressed() {
+        dismiss(animated: true)
     }
-
 }
 
-
-
 // customize height & width of the display
-// create-your-own themes
-
+// create-your-own themes, do not persist
+// save your own themes, persistance
+// screenshot and post to twitter?
+// maybe embed in a view so it can be centered? 
