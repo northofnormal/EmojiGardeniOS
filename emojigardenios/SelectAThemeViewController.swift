@@ -14,8 +14,38 @@ class SelectAThemeViewController: UIViewController {
     @IBOutlet var seaThemeButton: UIButton!
     @IBOutlet var spaceThemeButton: UIButton!
     
+    @IBOutlet var numberOfRowsLabel: UILabel!
+    @IBOutlet var numberOfColumnsLabel: UILabel!
+    @IBOutlet var numberOfRowsStepper: UIStepper!
+    @IBOutlet var numberOfColumnsStepper: UIStepper!
+    
     @IBAction func themeButtonPressed(sender: UIButton) {
         performSegue(withIdentifier: "MakeSomeArt", sender: sender)
+    }
+    
+    @IBAction func stepperValueChanged(sender: UIStepper) {
+        switch sender {
+        case numberOfRowsStepper:
+            let value = Int(numberOfRowsStepper.value)
+            numberOfRowsLabel.text = "\(value)"
+        case numberOfColumnsStepper:
+            let value = Int(numberOfColumnsStepper.value)
+            numberOfColumnsLabel.text = "\(value)"
+        default:
+            print("Unknown stepper sending values?")
+        }
+    }
+    
+    override func viewDidLoad() {
+        setDefaultValues()
+    }
+    
+    private func setDefaultValues() {
+        numberOfColumnsLabel.text = "4"
+        numberOfColumnsStepper.value = 4
+        
+        numberOfRowsLabel.text = "4"
+        numberOfRowsStepper.value = 4
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

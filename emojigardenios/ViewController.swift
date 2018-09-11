@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     let randomizer = Randomizer()
     
     var theme: Theme?
-    var numberOfRows = 3
-    var lengthOfRows = 3
+    var numberOfRows = 4
+    var lengthOfRows = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,4 +80,4 @@ class ViewController: UIViewController {
 // create-your-own themes, do not persist
 // save your own themes, persistance
 // screenshot and post to twitter?
-// maybe embed in a view so it can be centered? 
+// maybe embed in a view so it can be centered?
