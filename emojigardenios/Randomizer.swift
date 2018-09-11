@@ -10,9 +10,9 @@ import Foundation
 
 class Randomizer {
     
-    func generateComponentRow(componentArrays: [[String]]) -> String  {
-        let generatedRow = generateARow(componentArrays: componentArrays)
-        let generatedRowItems = generateRowItems(array: generatedRow)
+    func generateComponentRow(componentArrays: [[String]], length: Int) -> String  {
+        let generatedRow = generateARow(componentArrays: componentArrays, length: length)
+        let generatedRowItems = generateRowItems(array: generatedRow, length: length)
         
         let generatedString = generatedRowItems.joined(separator: " ")
         
@@ -20,21 +20,21 @@ class Randomizer {
     }
     
     
-    private func generateARow(componentArrays: [[String]]) -> [[String]] {
+    private func generateARow(componentArrays: [[String]], length: Int) -> [[String]] {
 
         var newArray: [[String]] = Array()
         
-        for _ in 1...4 {
+        for _ in 1...length {
             newArray.append(componentArrays.randomElement()!)
         }
         
         return newArray
     }
     
-    private func generateRowItems(array: [[String]]) -> [String] {
+    private func generateRowItems(array: [[String]], length: Int) -> [String] {
         var itemsArray: [String] = Array()
         
-        for _ in 1...4 {
+        for _ in 1...length {
             let itemCategory = array.randomElement()!
             itemsArray.append(itemCategory.randomElement()!)
         }

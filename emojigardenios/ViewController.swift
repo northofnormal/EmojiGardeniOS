@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     let randomizer = Randomizer()
     
     var theme: Theme?
-    var numberOfRows = 4
-    var lengthOfRows = 4
+    var numberOfRows = 3
+    var lengthOfRows = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,30 +31,61 @@ class ViewController: UIViewController {
         
         var generatedThing: [String] = Array()
         
-        for i in 1...numberOfRows {
-            // do something in here to generate the string with breaks? 
-            let string = randomizer.generateComponentRow(componentArrays: componentsArray)
+        for _ in 1...numberOfRows {
+            let string = randomizer.generateComponentRow(componentArrays: componentsArray, length: lengthOfRows)
             generatedThing.append(string)
         }
         
-//        let string1 = randomizer.generateComponentRow(componentArrays: componentsArray)
-//        let string2 = randomizer.generateComponentRow(componentArrays: componentsArray)
-//        let string3 = randomizer.generateComponentRow(componentArrays: componentsArray)
-//        let string4 = randomizer.generateComponentRow(componentArrays: componentsArray)
+        displayLabel.text = generatedThing[0]
         
-//        let generatedScene =  "\(string1) \n\(string2) \n\(string3) \n\(string4)"
-        
-        
-        
-        displayLabel.text = "\(generatedThing)"
-        displayLabel.font = UIFont.boldSystemFont(ofSize: 50)
+        for i in 1...generatedThing.count - 1 {
+            let displayText = generatedThing[i]
+            
+            let labelHeight = Int(displayLabel.frame.size.height)
+            let calculatedY = Int(displayLabel.frame.maxY) + (labelHeight * (i - 1))
+            
+            let newLabel = createANewLabelAt(y: calculatedY)
+            newLabel.text = displayText
+            
+            view.addSubview(newLabel)
+        }
     }
     
     @IBAction func tryAgainButtonPressed() {
         dismiss(animated: true)
     }
+    
+    func createANewLabelAt(y: Int) -> UILabel {
+        let rect = CGRect(x: displayLabel.frame.origin.x, y: CGFloat(y), width: view.frame.size.width - 40, height: displayLabel.frame.size.height)
+        
+        let newLabel = UILabel(frame: rect)
+        newLabel.font = UIFont.systemFont(ofSize: 50.0)
+        newLabel.numberOfLines = 1
+        newLabel.minimumScaleFactor = 0.25
+        newLabel.textAlignment = .center
+        newLabel.lineBreakMode = .byCharWrapping
+        newLabel.adjustsFontSizeToFitWidth = true
+        
+        return newLabel
+    }
+    
+    func addALabel(under label: UILabel) -> UILabel {
+        let rect = CGRect(x: label.frame.origin.x, y: label.frame.origin.y + label.frame.height, width: view.frame.size.width - 40, height: label.frame.height)
+        
+        let newLabel = UILabel(frame: rect)
+        newLabel.font = UIFont.systemFont(ofSize: 50.0)
+        newLabel.numberOfLines = 1
+        newLabel.minimumScaleFactor = 0.25
+        newLabel.textAlignment = .center
+        newLabel.lineBreakMode = .byCharWrapping
+        newLabel.adjustsFontSizeToFitWidth = true
+        
+        return newLabel
+    }
 
 }
+
+
 
 // customize height & width of the display
 // create-your-own themes
