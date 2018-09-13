@@ -16,6 +16,7 @@
 		97AF56532140B18A00F00320 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97AF56512140B18A00F00320 /* Main.storyboard */; };
 		97AF56552140B18B00F00320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97AF56542140B18B00F00320 /* Assets.xcassets */; };
 		97AF56582140B18B00F00320 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97AF56562140B18B00F00320 /* LaunchScreen.storyboard */; };
+		A8B1064DB5712EBE4FDF39AA /* Pods_emojigardenios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909803FBFCADF739E34972C /* Pods_emojigardenios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,9 @@
 		97AF56542140B18B00F00320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97AF56572140B18B00F00320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97AF56592140B18B00F00320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1BD0288DA163CF46871A4AA /* Pods-emojigardenios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emojigardenios.release.xcconfig"; path = "Pods/Target Support Files/Pods-emojigardenios/Pods-emojigardenios.release.xcconfig"; sourceTree = "<group>"; };
+		CE93BA3656CE114673E0DABC /* Pods-emojigardenios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-emojigardenios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-emojigardenios/Pods-emojigardenios.debug.xcconfig"; sourceTree = "<group>"; };
+		D909803FBFCADF739E34972C /* Pods_emojigardenios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_emojigardenios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8B1064DB5712EBE4FDF39AA /* Pods_emojigardenios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,8 @@
 			children = (
 				97AF564C2140B18A00F00320 /* emojigardenios */,
 				97AF564B2140B18A00F00320 /* Products */,
+				A6B1DB00CBA520F6C1F12014 /* Pods */,
+				D04334549B4C61EAB3A403FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,23 @@
 			path = emojigardenios;
 			sourceTree = "<group>";
 		};
+		A6B1DB00CBA520F6C1F12014 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE93BA3656CE114673E0DABC /* Pods-emojigardenios.debug.xcconfig */,
+				A1BD0288DA163CF46871A4AA /* Pods-emojigardenios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D04334549B4C61EAB3A403FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D909803FBFCADF739E34972C /* Pods_emojigardenios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97AF565C2140B18B00F00320 /* Build configuration list for PBXNativeTarget "emojigardenios" */;
 			buildPhases = (
+				30932C1B41C37EE4B6AE4230 /* [CP] Check Pods Manifest.lock */,
 				97AF56462140B18A00F00320 /* Sources */,
 				97AF56472140B18A00F00320 /* Frameworks */,
 				97AF56482140B18A00F00320 /* Resources */,
+				9B5DAFBD027F3FE68B48A55C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +167,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30932C1B41C37EE4B6AE4230 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-emojigardenios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B5DAFBD027F3FE68B48A55C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-emojigardenios/Pods-emojigardenios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IGColorPicker/IGColorPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGColorPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-emojigardenios/Pods-emojigardenios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		97AF56462140B18A00F00320 /* Sources */ = {
@@ -294,6 +369,7 @@
 		};
 		97AF565D2140B18B00F00320 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE93BA3656CE114673E0DABC /* Pods-emojigardenios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,6 +388,7 @@
 		};
 		97AF565E2140B18B00F00320 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1BD0288DA163CF46871A4AA /* Pods-emojigardenios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
