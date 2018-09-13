@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		970AB26221485DEC004E186A /* MakeYourOwnThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AB26121485DEC004E186A /* MakeYourOwnThemeViewController.swift */; };
 		97924C6D2141A79300D3B8DB /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97924C6C2141A79300D3B8DB /* Randomizer.swift */; };
 		97924C712141B7A500D3B8DB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97924C702141B7A500D3B8DB /* Theme.swift */; };
 		97924C732141C45D00D3B8DB /* SelectAThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97924C722141C45D00D3B8DB /* SelectAThemeViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		970AB26121485DEC004E186A /* MakeYourOwnThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeYourOwnThemeViewController.swift; sourceTree = "<group>"; };
 		97924C6C2141A79300D3B8DB /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		97924C702141B7A500D3B8DB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		97924C722141C45D00D3B8DB /* SelectAThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAThemeViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		97AF564C2140B18A00F00320 /* emojigardenios */ = {
 			isa = PBXGroup;
 			children = (
+				970AB26121485DEC004E186A /* MakeYourOwnThemeViewController.swift */,
 				97924C722141C45D00D3B8DB /* SelectAThemeViewController.swift */,
 				97924C6C2141A79300D3B8DB /* Randomizer.swift */,
 				97924C702141B7A500D3B8DB /* Theme.swift */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970AB26221485DEC004E186A /* MakeYourOwnThemeViewController.swift in Sources */,
 				97924C732141C45D00D3B8DB /* SelectAThemeViewController.swift in Sources */,
 				97AF56502140B18A00F00320 /* ViewController.swift in Sources */,
 				97924C712141B7A500D3B8DB /* Theme.swift in Sources */,

@@ -13,6 +13,7 @@ class SelectAThemeViewController: UIViewController {
     @IBOutlet var forrestThemeButton: UIButton!
     @IBOutlet var seaThemeButton: UIButton!
     @IBOutlet var spaceThemeButton: UIButton!
+    @IBOutlet var makeYourOwnButton: UIButton!
     
     @IBOutlet var numberOfRowsLabel: UILabel!
     @IBOutlet var numberOfColumnsLabel: UILabel!
@@ -20,7 +21,15 @@ class SelectAThemeViewController: UIViewController {
     @IBOutlet var numberOfColumnsStepper: UIStepper!
     
     @IBAction func themeButtonPressed(sender: UIButton) {
-        performSegue(withIdentifier: "MakeSomeArt", sender: sender)
+        switch sender {
+        case forrestThemeButton, seaThemeButton, spaceThemeButton:
+            performSegue(withIdentifier: "MakeSomeArt", sender: sender)
+        case makeYourOwnButton:
+            performSegue(withIdentifier: "MakeYourOwnThemeSegue", sender: sender)
+        default:
+            print("Unknown button pressed")
+        }
+        
     }
     
     @IBAction func stepperValueChanged(sender: UIStepper) {
@@ -49,19 +58,35 @@ class SelectAThemeViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as? ViewController
-        let senderButton = sender as? UIButton
+        guard let senderButton = sender as? UIButton else { return }
         
         switch senderButton {
-        case forrestThemeButton:
-            destination?.theme = .forrestTheme
-        case seaThemeButton:
-            destination?.theme = .seaTheme
-        case spaceThemeButton:
-            destination?.theme = .spaceTheme
+        case forrestThemeButton, seaThemeButton, spaceThemeButton:
+            prepareForThemedSegue(segue: segue, sender: senderButton)
+        case makeYourOwnButton:
+            print("Making my own theme!")
         default:
-            print("unrecognized button selected")
+            print("Unknown button trying to segue")
         }
     }
+    
+    private func prepareForThemedSegue(segue: UIStoryboardSegue, sender: UIButton) {
+        let destination = segue.destination as? ViewController
 
+        if segue.identifier == "MakeSomeArt" {
+            destination?.numberOfRows = Int(numberOfRowsStepper.value)
+            destination?.numberOfColumns = Int(numberOfColumnsStepper.value)
+            
+            switch sender {
+            case forrestThemeButton:
+                destination?.theme = forrestTheme
+            case seaThemeButton:
+                destination?.theme = seaTheme
+            case spaceThemeButton:
+                destination?.theme = spaceTheme
+            default:
+                print("unrecognized button selected")
+            }
+        }
+    }
 }

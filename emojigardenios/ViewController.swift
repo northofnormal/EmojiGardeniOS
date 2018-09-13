@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     var theme: Theme?
     var numberOfRows = 4
-    var lengthOfRows = 4
+    var numberOfColumns = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     func generateScene() {
         guard let selectedTheme = theme else { return }
-        let componentsArray = [selectedTheme.contextArray, selectedTheme.friendsArray, selectedTheme.snacksArray]
+        let componentsArray = [selectedTheme.contextArray, selectedTheme.friendsArray, selectedTheme.flairArray]
         
         let generatedSceneCollection = randomizeSceneCollection(components: componentsArray)
         
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         var randomizedCollection: [String] = Array()
         
         for _ in 1...numberOfRows {
-            let string = randomizer.generateComponentRow(componentArrays: components, length: lengthOfRows)
+            let string = randomizer.generateComponentRow(componentArrays: components, length: numberOfColumns)
             randomizedCollection.append(string)
         }
         
@@ -76,8 +76,8 @@ class ViewController: UIViewController {
     }
 }
 
-// customize height & width of the display
 // create-your-own themes, do not persist
 // save your own themes, persistance
+// perlin noise to weight the context array?
 // screenshot and post to twitter?
 // maybe embed in a view so it can be centered?
