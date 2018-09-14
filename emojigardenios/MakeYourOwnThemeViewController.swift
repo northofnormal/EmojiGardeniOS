@@ -85,7 +85,7 @@ class MakeYourOwnThemeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as? ViewController
+        let destination = segue.destination as? GeneratedSceneViewController
         
         destination?.theme = userGeneratedTheme
         destination?.numberOfRows = Int(numberOfRowsStepper.value)

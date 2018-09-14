@@ -71,7 +71,7 @@ class SelectAThemeViewController: UIViewController {
     }
     
     private func prepareForThemedSegue(segue: UIStoryboardSegue, sender: UIButton) {
-        let destination = segue.destination as? ViewController
+        let destination = segue.destination as? GeneratedSceneViewController
 
         if segue.identifier == "MakeSomeArt" {
             destination?.numberOfRows = Int(numberOfRowsStepper.value)
