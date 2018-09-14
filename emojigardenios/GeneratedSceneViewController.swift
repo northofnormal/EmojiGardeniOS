@@ -76,7 +76,7 @@ class GeneratedSceneViewController: UIViewController {
     }
 }
 
-// save your own themes, persistance
-// perlin noise to weight the context array?
 // screenshot and post to twitter?
 // maybe embed in a view so it can be centered?
+// save your own themes, persistance
+// perlin noise to weight the context array?
