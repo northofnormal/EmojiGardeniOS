@@ -76,7 +76,6 @@ class ViewController: UIViewController {
     }
 }
 
-// create-your-own themes, do not persist
 // save your own themes, persistance
 // perlin noise to weight the context array?
 // screenshot and post to twitter?

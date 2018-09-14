@@ -15,6 +15,10 @@ class MakeYourOwnThemeViewController: UIViewController {
     @IBOutlet var friendsField: UITextField!
     @IBOutlet var flairField: UITextField!
     @IBOutlet var colorPickerView: ColorPickerView!
+    @IBOutlet var numberOfRowsLabel: UILabel!
+    @IBOutlet var numberOfColumnsLabel: UILabel!
+    @IBOutlet var numberOfRowsStepper: UIStepper!
+    @IBOutlet var numberOfColumnsStepper: UIStepper!
     
     var userGeneratedTheme: Theme?
     var selectedColor: UIColor?
@@ -24,6 +28,16 @@ class MakeYourOwnThemeViewController: UIViewController {
         
         colorPickerView.delegate = self
         colorPickerView.layoutDelegate = self
+        
+        setDefaultValues()
+    }
+    
+    private func setDefaultValues() {
+        numberOfColumnsLabel.text = "4"
+        numberOfColumnsStepper.value = 4
+        
+        numberOfRowsLabel.text = "4"
+        numberOfRowsStepper.value = 4
     }
 
     @IBAction func goBackButtonPressed() {
@@ -38,6 +52,19 @@ class MakeYourOwnThemeViewController: UIViewController {
         userGeneratedTheme = Theme(context: contextArray, friends: friendsArray, flair: flairArray, backgroundColor: selectedColor ?? UIColor.white)
         
         performSegue(withIdentifier: "GenerateCustomSceneSegue", sender: sender)
+    }
+    
+    @IBAction func stepperValueChanged(sender: UIStepper) {
+        switch sender {
+        case numberOfRowsStepper:
+            let value = Int(numberOfRowsStepper.value)
+            numberOfRowsLabel.text = "\(value)"
+        case numberOfColumnsStepper:
+            let value = Int(numberOfColumnsStepper.value)
+            numberOfColumnsLabel.text = "\(value)"
+        default:
+            print("Unknown stepper sending values?")
+        }
     }
     
     private func convertToArray(_ string: String?) -> [String] {
@@ -58,6 +85,8 @@ class MakeYourOwnThemeViewController: UIViewController {
         let destination = segue.destination as? ViewController
         
         destination?.theme = userGeneratedTheme
+        destination?.numberOfRows = Int(numberOfRowsStepper.value)
+        destination?.numberOfColumns = Int(numberOfColumnsStepper.value)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -65,8 +94,6 @@ class MakeYourOwnThemeViewController: UIViewController {
     }
     
     // restrict keyboard and/or entry to emoji
-    // set up rows/columns UI
-    // set up rows/columns logic
 
 }
 
