@@ -310,7 +310,7 @@
                                     <action selector="stepperValueChangedWithSender:" destination="4wa-DJ-EQs" eventType="valueChanged" id="HkP-Ov-L3m"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ipF-Mi-6wW">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="ipF-Mi-6wW">
                                 <rect key="frame" x="261" y="538" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepperValueChangedWithSender:" destination="4wa-DJ-EQs" eventType="valueChanged" id="dLs-TJ-5yd"/>

@@ -28,6 +28,9 @@ class MakeYourOwnThemeViewController: UIViewController {
         
         colorPickerView.delegate = self
         colorPickerView.layoutDelegate = self
+        contextField.delegate = self
+        friendsField.delegate = self
+        flairField.delegate = self
         
         setDefaultValues()
     }
@@ -92,9 +95,18 @@ class MakeYourOwnThemeViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
-    // restrict keyboard and/or entry to emoji
 
+}
+
+extension MakeYourOwnThemeViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let disallowedSet = NSCharacterSet.symbols.inverted
+        let filtered = string.components(separatedBy: disallowedSet).joined()
+        
+        return string == filtered
+    }
+    
 }
 
 extension MakeYourOwnThemeViewController: ColorPickerViewDelegate {
