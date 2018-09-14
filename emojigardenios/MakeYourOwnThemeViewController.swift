@@ -30,24 +30,41 @@ class MakeYourOwnThemeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func generateSceneButtonPressed() {
+    @IBAction func generateSceneButtonPressed(sender: UIButton) {
         let contextArray = convertToArray(contextField.text)
         let friendsArray = convertToArray(friendsField.text)
         let flairArray = convertToArray(flairField.text)
         
         userGeneratedTheme = Theme(context: contextArray, friends: friendsArray, flair: flairArray, backgroundColor: selectedColor ?? UIColor.white)
+        
+        performSegue(withIdentifier: "GenerateCustomSceneSegue", sender: sender)
     }
     
     private func convertToArray(_ string: String?) -> [String] {
-        guard let newArray = string?.components(separatedBy: ",") else {
+        guard let stringToSeparate = string else {
             return [""]
+        }
+        
+        var newArray: [String] = []
+        
+        stringToSeparate.forEach { character in
+            newArray.append("\(character)")
         }
         
         return newArray
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? ViewController
+        
+        destination?.theme = userGeneratedTheme
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     // restrict keyboard and/or entry to emoji
-    // dismiss keyboard
     // set up rows/columns UI
     // set up rows/columns logic
 

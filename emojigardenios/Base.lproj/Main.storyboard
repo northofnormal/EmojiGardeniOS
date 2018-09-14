@@ -277,7 +277,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="generateSceneButtonPressed" destination="4wa-DJ-EQs" eventType="touchUpInside" id="S5L-6H-NXy"/>
+                                    <action selector="generateSceneButtonPressedWithSender:" destination="4wa-DJ-EQs" eventType="touchUpInside" id="e2D-VG-0Al"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T73-Kv-Jyt">
