@@ -18,6 +18,8 @@ class GeneratedSceneViewController: UIViewController {
     var numberOfRows = 4
     var numberOfColumns = 4
     
+    var generatedSceneCollection: [String]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,12 +31,14 @@ class GeneratedSceneViewController: UIViewController {
         guard let selectedTheme = theme else { return }
         let componentsArray = [selectedTheme.contextArray, selectedTheme.friendsArray, selectedTheme.flairArray]
         
-        let generatedSceneCollection = randomizeSceneCollection(components: componentsArray)
+        generatedSceneCollection = randomizeSceneCollection(components: componentsArray)
         
-        displayLabel.text = generatedSceneCollection[0]
+        displayLabel.text = generatedSceneCollection?[0]
         
-        for i in 1...generatedSceneCollection.count - 1 {
-            let displayText = generatedSceneCollection[i]
+        guard let collection = generatedSceneCollection, collection.count > 1 else { return }
+        
+        for i in 1...collection.count - 1 {
+            let displayText = collection[i]
             
             let labelHeight = Int(displayLabel.frame.size.height)
             let calculatedY = Int(displayLabel.frame.maxY) + (labelHeight * (i - 1))
