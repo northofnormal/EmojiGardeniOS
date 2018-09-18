@@ -74,9 +74,24 @@ class GeneratedSceneViewController: UIViewController {
     @IBAction func tryAgainButtonPressed() {
         dismiss(animated: true)
     }
+    
+    @IBAction func shareOnTwitterButtonPressed() {
+        
+        let tweetText = "Check out this scene I made with Emoji Garden! \n"
+        let tweetScene = "just testing" // compile the labels back into one string with line breaks
+        
+        let shareString = "https://twitter.com/intent/tweet?text=\(tweetText)\(tweetScene)"
+        let escapedShareString = shareString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let url = URL(string: escapedShareString)
+        
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+        
+        
+    }
 }
 
-// screenshot and post to twitter? or post it raw, there's under the limit 
+// screenshot and post to twitter? or post it raw, there's under the limit
+// check for twitter app and post that way instead of through safari
 // maybe embed in a view so it can be centered?
 // rethink navigation? 
 // save your own themes, persistance
