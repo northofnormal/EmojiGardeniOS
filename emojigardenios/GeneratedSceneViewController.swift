@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GeneratedSceneViewController.swift
 //  emojigardenios
 //
 //  Created by Anne Cahalan on 9/5/18.
@@ -76,7 +76,8 @@ class GeneratedSceneViewController: UIViewController {
     }
 }
 
-// screenshot and post to twitter?
+// screenshot and post to twitter? or post it raw, there's under the limit 
 // maybe embed in a view so it can be centered?
+// rethink navigation? 
 // save your own themes, persistance
 // perlin noise to weight the context array?
