@@ -93,8 +93,9 @@ class GeneratedSceneViewController: UIViewController {
 }
 
 
-// check for twitter app and post that way instead of through safari
+
+// get a designer involved - talk to MB about it
 // maybe embed in a view so it can be centered?
-// rethink navigation? 
-// save your own themes, persistance
+// save your own themes, persistance - codable, nsuserdefaults 
 // perlin noise to weight the context array?
+// check for twitter app and post that way instead of through safari
