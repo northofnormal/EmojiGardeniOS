@@ -1,0 +1,6 @@
+framework module Pods_emojigardenios {
+  umbrella header "Pods-emojigardenios-umbrella.h"
+
+  export *
+  module * { export * }
+}

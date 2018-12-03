@@ -11,6 +11,7 @@ import UIKit
 class GeneratedSceneViewController: UIViewController {
     
     @IBOutlet var displayLabel: UILabel!
+    @IBOutlet var saveThisThemeButton: UIButton!
     
     let randomizer = Randomizer()
     
@@ -24,7 +25,16 @@ class GeneratedSceneViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = theme?.backgroundColor
+        saveThisThemeButton.isHidden = shouldShowSaveButton()
         generateScene()
+    }
+    
+    private func shouldShowSaveButton() -> Bool {
+        if theme! == forrestTheme || theme! == seaTheme || theme! == forrestTheme {
+            return true
+        }
+        
+       return false
     }
     
     func generateScene() {
@@ -93,9 +103,6 @@ class GeneratedSceneViewController: UIViewController {
 }
 
 
-
-// get a designer involved - talk to MB about it
-// maybe embed in a view so it can be centered?
 // save your own themes, persistance - codable, nsuserdefaults 
 // perlin noise to weight the context array?
 // check for twitter app and post that way instead of through safari

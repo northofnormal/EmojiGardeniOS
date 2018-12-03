@@ -52,7 +52,7 @@ class MakeYourOwnThemeViewController: UIViewController {
         let friendsArray = convertToArray(friendsField.text)
         let flairArray = convertToArray(flairField.text)
         
-        userGeneratedTheme = Theme(context: contextArray, friends: friendsArray, flair: flairArray, backgroundColor: selectedColor ?? UIColor.white)
+        userGeneratedTheme = Theme(title: "Generated Theme", context: contextArray, friends: friendsArray, flair: flairArray, backgroundColor: selectedColor ?? UIColor.white)
         
         performSegue(withIdentifier: "GenerateCustomSceneSegue", sender: sender)
     }
